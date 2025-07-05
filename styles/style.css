@@ -31,3 +31,50 @@ body {
         h1, h2 {
             margin: 0;
         }
+        nav {
+            background-color: #222;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: #eaeaea;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            /* Remove or comment out the fixed height */
+            height: 100%;
+            border: none;
+            transition: height 0.2s;
+        }
