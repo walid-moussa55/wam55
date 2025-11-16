@@ -2,26 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #fff;
+            color: #c0c0c0;
+            background-color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00d4ff, #ff006e);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff006e, #00d4ff);
         }
 
         h3 {
             font-size: 28px;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff, #ff006e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
             text-align: center;
         }
 
         p {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 15px;
         }
 
@@ -31,19 +57,30 @@
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         strong {
-            color: #2980b9;
+            color: #00d4ff;
         }
 
         .highlight-section {
-            background-color: #f0f8ff;
-            border-left: 4px solid #2980b9;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 0, 110, 0.08));
+            border-left: 4px solid #00d4ff;
             padding: 15px;
             margin: 20px 0;
-            border-radius: 6px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .highlight-section p {
+            margin-bottom: 10px;
+        }
+
+        .highlight-section ul {
+            margin: 0;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -52,22 +89,23 @@
     <p>Hello! I'm a passionate and motivated student currently focused on expanding my skills in the field of computer science and software development.</p>
 
     <div class="highlight-section">
-        <p>I’m currently learning and working with:</p>
+        <p><strong>I'm currently learning and working with:</strong></p>
         <ul>
-            <li><strong>Web Development</strong> – Frontend and backend tools & frameworks</li>
-            <li><strong>Java</strong> – Object-oriented design and development</li>
-            <li><strong>C/C++</strong> – System-level programming and algorithms</li>
-            <li><strong>Python</strong> – Scripting, automation, and AI development</li>
+            <li><strong>🌐 Web Development</strong> – Frontend and backend tools & frameworks</li>
+            <li><strong>☕ Java</strong> – Object-oriented design and development</li>
+            <li><strong>⚙️ C/C++</strong> – System-level programming and algorithms</li>
+            <li><strong>🐍 Python</strong> – Scripting, automation, and AI development</li>
         </ul>
     </div>
 
-    <p>In addition to my ongoing studies, I’m also exploring more advanced domains:</p>
+    <p>In addition to my ongoing studies, I'm also exploring more advanced domains:</p>
     <ul>
-        <li><strong>Artificial Intelligence</strong> – Deep learning, NLP, and computer vision</li>
-        <li><strong>Big Data & Cloud Computing</strong> – Tools like Hadoop, Spark, Firebase</li>
-        <li><strong>Embedded Systems & IoT</strong> – Projects using ESP32, sensors, and microcontrollers</li>
+        <li><strong>🤖 Artificial Intelligence</strong> – Deep learning, NLP, and computer vision</li>
+        <li><strong>☁️ Big Data & Cloud Computing</strong> – Tools like Hadoop, Spark, Firebase</li>
+        <li><strong>📡 Embedded Systems & IoT</strong> – Projects using ESP32, sensors, and microcontrollers</li>
     </ul>
 
     <p>This website is a reflection of my growth as a developer. Feel free to explore my work and projects. Thanks for visiting!</p>
+
 </body>
 </html>

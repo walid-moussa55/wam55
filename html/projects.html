@@ -2,63 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            padding: 30px;
-            margin: 0;
-            color: #333;
+            background-color: transparent;
+            padding: 20px;
+            color: #c0c0c0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00d4ff, #ff006e);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff006e, #00d4ff);
         }
 
         h2 {
             text-align: center;
             font-size: 32px;
-            color: #2c3e50;
+            background: linear-gradient(135deg, #00d4ff, #ff006e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .project-card {
-            background: #fff;
-            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 0, 110, 0.08));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+            transition: left 0.3s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
         }
 
         .project-title {
             font-size: 20px;
             font-weight: bold;
-            color: #2980b9;
+            color: #00d4ff;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
 
         .project-desc {
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .project-link {
-            display: inline-block;
-            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 13px;
-            color: #2980b9;
+            color: #ff006e;
             text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
         }
 
         .project-link:hover {
-            text-decoration: underline;
+            gap: 1rem;
+            color: #00d4ff;
+        }
+
+        .project-link::after {
+            content: '→';
+            transition: transform 0.3s;
+        }
+
+        .project-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -69,58 +147,58 @@
             <div class="project-title">CompSim</div>
             <div class="project-desc">
                 This page simulates how a computer operates and how programs are executed on it at a low level.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/CompSim" target="_blank">View on GitHub</a>
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/CompSim" target="_blank">View on GitHub</a>
         </div>
+
         <div class="project-card">
-            <div class="project-title">16bit-Computer</div>
+            <div class="project-title">16-bit Computer</div>
             <div class="project-desc">
                 A handmade 16-bit computer built using digital logic, designed and simulated from scratch.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/16bit-Computer" target="_blank">View on GitHub</a>
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/16bit-Computer" target="_blank">View on GitHub</a>
         </div>
+
         <div class="project-card">
-            <div class="project-title">NeuralNetwork</div>
+            <div class="project-title">Neural Network</div>
             <div class="project-desc">
-                This project implements a neural network and other machine learning models in C++. It includes a breakdown of each file and instructions on how to run and test the models.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/NeuralNetwork" target="_blank">View on GitHub</a>
+                A comprehensive C++ implementation of neural networks and ML models with detailed documentation.
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/NeuralNetwork" target="_blank">View on GitHub</a>
         </div>
+
         <div class="project-card">
-            <div class="project-title">MachineLearning</div>
+            <div class="project-title">Machine Learning</div>
             <div class="project-desc">
-                A Python-based implementation of various machine learning models and neural networks from scratch using NumPy, designed for educational and experimental use.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/MachineLearning" target="_blank">View on GitHub</a>
+                Python-based ML models and neural networks from scratch using NumPy for educational purposes.
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/MachineLearning" target="_blank">View on GitHub</a>
         </div>
+
         <div class="project-card">
-            <div class="project-title">ReinforcementLearning</div>
+            <div class="project-title">Reinforcement Learning</div>
             <div class="project-desc">
-                This project features a Snake game environment where an agent learns to play using reinforcement learning via Deep Q-Learning, built with PyTorch.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/ReforcementLearning" target="_blank">View on GitHub</a>
+                Snake game environment where an agent learns using Deep Q-Learning with PyTorch.
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/ReforcementLearning" target="_blank">View on GitHub</a>
         </div>
-        <div class="project-card">
-            <div class="project-title">Video-Captioning</div>
-            <div class="project-desc">
-                Ce projet propose une solution complète de gestion intelligente des déchets avec ESP32, FastAPI, MongoDB, Firebase et Flutter. Il mesure le remplissage, poids, humidité, température, gaz et eau, avec affichage local et remontée des données en temps réel.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/SmartTrash" target="_blank">View on GitHub</a>
-            </div>
-        </div>
+
         <div class="project-card">
             <div class="project-title">SmartTrash</div>
             <div class="project-desc">
-                A complete system for automatic generation of text captions for videos using ResNet50 for visual feature extraction and sequence models with attention mechanisms for caption generation.
-                <br>
-                <a class="project-link" href="https://github.com/walid-moussa55/Video-Captioning" target="_blank">View on GitHub</a>
+                Complete IoT waste management system using ESP32, FastAPI, MongoDB, and Flutter with real-time sensors.
             </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/SmartTrash" target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Video Captioning</div>
+            <div class="project-desc">
+                Automatic video caption generation using ResNet50 and attention mechanisms for sequence modeling.
+            </div>
+            <a class="project-link" href="https://github.com/walid-moussa55/Video-Captioning" target="_blank">View on GitHub</a>
         </div>
     </div>
+
 </body>
 </html>
